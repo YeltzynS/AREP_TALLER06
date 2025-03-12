@@ -1,0 +1,13 @@
+com\edu\eci\arep\clase6\service\UserService.class
+com\edu\eci\arep\clase6\repository\UserRepository.class
+com\edu\eci\arep\clase6\controller\HelloController.class
+com\edu\eci\arep\clase6\controller\PropertyController.class
+com\edu\eci\arep\clase6\dto\UserDto.class
+com\edu\eci\arep\clase6\PasswordEncoderUtil.class
+com\edu\eci\arep\clase6\repository\PropertyRepository.class
+com\edu\eci\arep\clase6\model\User.class
+com\edu\eci\arep\clase6\controller\AuthController.class
+com\edu\eci\arep\clase6\service\PropertyService.class
+com\edu\eci\arep\clase6\model\Property.class
+com\edu\eci\arep\clase6\config\SecurityConfig.class
+com\edu\eci\arep\clase6\WebSecure.class
