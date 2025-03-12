@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:35000/api/properties"; // Ajusta el puerto si es necesario
+const API_URL = "https://areptaller6apache.duckdns.org:5000/api/properties"; // Usa HTTPS // Ajusta el puerto si es necesario
 
 // Cargar propiedades al iniciar
 document.addEventListener("DOMContentLoaded", () => {
