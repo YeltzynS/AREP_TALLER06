@@ -1,4 +1,3 @@
-const url = 'https://areptaller6apache.duckdns.org:8443/login.html';
 document.getElementById("loginForm").addEventListener("submit", async (e) => {
     e.preventDefault(); // Evitar que el formulario se envíe de forma tradicional
 
@@ -6,17 +5,20 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     const password = document.getElementById("password").value;
 
     try {
-        const response = await fetch("https://areptaller6apache.duckdns.org/api/auth/login", {
+        const response = await fetch("/api/auth/login", {
             method: "POST",
             headers: {
-                "Content-Type": "application/x-www-form-urlencoded",
+                "Content-Type": "application/json" // Cambia a JSON
             },
-            body: `username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`,
+            body: JSON.stringify({ // Envía los datos como JSON
+                username: username,
+                password: password
+            })
         });
 
         if (response.ok) {
             // Redirigir al usuario a la página principal después del inicio de sesión exitoso
-            window.location.href = "https://areptaller6apache.duckdns.org/index.html";
+            window.location.href = "/index.html";
         } else {
             // Mostrar mensaje de error si las credenciales son incorrectas
             document.getElementById("errorMessage").style.display = "block";

@@ -9,7 +9,8 @@
     <body>
         <div class="container">
             <h1>Iniciar Sesión</h1>
-            <form id="loginForm" action="/api/auth/login" method="POST">
+            <!-- Formulario de login sin action ni method -->
+            <form id="loginForm">
                 <div class="form-group">
                     <label for="username">Usuario:</label>
                     <input type="text" id="username" name="username" required>
@@ -32,5 +33,7 @@
                 }
             });
         </script>
+        <!-- Incluye el archivo JavaScript -->
+        <script src="script.js"></script>
     </body>
 </html>

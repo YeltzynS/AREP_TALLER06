@@ -19,33 +19,18 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
-                .authorizeHttpRequests(authorize -> authorize
-                .requestMatchers("/api/auth/register", "/api/auth/login").permitAll() // Endpoints públicos
-                .requestMatchers("/login.html", "/styles.css", "/script.js").permitAll()
-                .anyRequest().authenticated()
+                .csrf(csrf -> csrf.disable())
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/", "/auth/**", "/api/properties/**", "/api/properties/", "/api/auth/login","/api/hello", "index.html", "login.html", "script.js", "loginscript.js", "styles.css").permitAll()
+                        .anyRequest().authenticated()
                 )
-                .formLogin(form -> form
-                .loginPage("/login.html")
-                .loginProcessingUrl("/api/auth/login") // Debe coincidir con el formulario
-                .defaultSuccessUrl("/index.html", true) // Redirige después del login exitoso
-                .failureUrl("/login.html?error=true")
-                .permitAll()
-                )
-                .logout(logout -> logout
-                .logoutUrl("/api/auth/logout")
-                .logoutSuccessUrl("/login.html")
-                .permitAll()
-                )
-                .csrf(csrf -> csrf.ignoringRequestMatchers("/api/**")); // Deshabilitar CSRF solo para API
-
+                ;
         return http.build();
     }
-
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("https://areptaller6apache.duckdns.org")); // Permite solicitudes desde tu dominio
+        config.setAllowedOrigins(List.of("https://localhost")); // Permite solicitudes desde tu dominio
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE"));
         config.setAllowedHeaders(List.of("*"));
         config.setAllowCredentials(true); // Permitir credenciales en CORS
