@@ -161,10 +161,12 @@ La arquitectura del sistema sigue un modelo en tres capas:
 4. Ver que se creo la tabla:
    ![3.png](src/main/resources/static/3.png)
    ![4.png](src/main/resources/static/4.png)
+
 ### **Creación de Aplicación en EC2**
 1. Crea una nueva instancia EC2 predeterminada en AWS
    
 ![16.png](src/main/resources/static/16.png)
+
 2. Conéctate a la instancia EC2 usando SSH
    
     ``` bash
@@ -172,7 +174,9 @@ La arquitectura del sistema sigue un modelo en tres capas:
     ```
 3. Generación de certificados:
    Se crearon antes de crear las instancias, se creo el archivo keystore.p12 y asi mismo el trustore
+
    ![15.png](src/main/resources/static/15.png)
+
 4. Configura las propiedades de seguridad en application.properties:
      ``` bash
     server.port=8443 
@@ -209,6 +213,7 @@ La arquitectura del sistema sigue un modelo en tres capas:
 ### **Configuración del Servidor Web en EC2 con Apache**
 1. Lanzamos la instancia para el frondend.
 ![14.png](src/main/resources/static/14.png)
+
 2. Guarda los archivos estáticos y cárgalos en la instancia EC2 con el siguiente comando:
     
     ``` bash
@@ -253,7 +258,7 @@ La arquitectura del sistema sigue un modelo en tres capas:
 ![12.png](src/main/resources/static/12.png)
       
 ## **Video Funcionando**
-[![Video Demo](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://youtu.be/dwiVE1yXyfg)
+[![Video Demo](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://youtu.be/lIlZdTZqZBc)
 ---
 ## Corriendo los test 
 Utiliza este comando para correr los test:
