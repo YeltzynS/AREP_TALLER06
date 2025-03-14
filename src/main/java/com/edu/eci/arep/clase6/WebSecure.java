@@ -16,7 +16,7 @@ public class WebSecure {
 
         // Iniciar la aplicación Spring Boot
         SpringApplication app = new SpringApplication(WebSecure.class);
-        app.setDefaultProperties(Collections.singletonMap("server.port", "5000")); 
+        app.setDefaultProperties(Collections.singletonMap("server.port", "8443")); 
         app.run(args);
     }
 }
